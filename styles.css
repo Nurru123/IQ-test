@@ -16,7 +16,7 @@
     position: relative;
 }
 
-.main__menu_cover {
+.main-page__menu {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -38,20 +38,20 @@
     cursor: pointer;
 }
 
-.menu_list {
+.menu-list {
     margin-top: 64px;
 }
 
-.menu__list_item {
+.menu-list__item {
     margin-bottom: 27px;
     color: #FFFFFF;
 }
 
-.menu__list_item:hover {
+.menu-list__item:hover {
     color: #F4CE0C;
 }
 
-.main_header {
+.main-page__header {
     padding: 17px 15px 13px;
     background-color: #181818;
 }
@@ -68,7 +68,7 @@
     padding: 0 25px;
 }
 
-.content_brain-block {
+.content__brain-block {
     background-image: url('./images/background-night-sky.svg');
     background-position: top center;
 }
@@ -143,12 +143,12 @@
 
 }
 
-.content_blue-block {
+.content__blue-block {
     padding: 35px 29px 25px 33px;
     background: radial-gradient(84.34% 50.29% at 48.75% 49.71%, #2950C2 0%, rgba(38, 91, 199, 0.96) 40.62%, rgba(39, 98, 187, 0) 85.42%);
 }
 
-.blue-block_text {
+.blue-block__text {
     font-family: 'Yeseva One';
     font-size: 18px;
     line-height: 23px;
@@ -167,7 +167,7 @@
     align-self: flex-end
 }
 
-.content_brain-map-block {
+.content__brain-map-block {
     background-color: white;
     padding: 0 11px 40px;
 }
@@ -184,19 +184,19 @@
     font-weight: 700;
 }
 
-.content_brain-map-block button {
+.content__brain-map-block button {
     width: 200px;
     height: 44px;
     margin-top: -9px;
 }
 
-.content_tunder-block {
+.content__tunder-block {
     background-image: url('./images/background-night-sky.svg');
     padding: 0 9px;
     position: relative;
 }
 
-.tunder-block_text {
+.tunder-block__text {
     font-family: 'Merriweather', serif;
     color: #FFFFFF;
     font-size: 15px;
@@ -205,7 +205,7 @@
     margin: 55px 5px 15px;
 }
 
-.tunder-block_text span {
+.tunder-block__text span {
     font-weight: 900;
     color: #FFC700;
 }
@@ -222,7 +222,7 @@
     margin-bottom: 33px;
 }
 
-.content_tunder-block .btn-test {
+.content__tunder-block .btn-test {
     background: transparent;
     border: 1px solid white;
     color: #FFFFFF;
