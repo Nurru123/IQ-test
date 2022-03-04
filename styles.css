@@ -17,7 +17,6 @@
 }
 
 .main__menu_cover {
-    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -69,10 +68,6 @@
     padding: 0 25px;
 }
 
-.main__content_hidden {
-    display: none;
-}
-
 .content_brain-block {
     background-image: url('./images/background-night-sky.svg');
     background-position: top center;
@@ -89,7 +84,7 @@
     border-radius: 20px;
     font-family: 'Merriweather', serif;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -112,6 +107,7 @@
 
 .big-brain {
     width: 150px;
+    margin: 4px auto;
 }
 
 .brain-block__text_bottom {

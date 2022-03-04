@@ -11,7 +11,7 @@ exitBtn.addEventListener('click', showHideMenu);
 
 
 function showHideDetails() {
-    if (contentHidden.style.display == 'none') {
+    if (contentHidden.style.display === 'none') {
         contentHidden.style.display = 'block';
         details.style.transform = 'none';
     } else {
@@ -21,8 +21,11 @@ function showHideDetails() {
 }
 
 function showHideMenu() {
-    if (menuCover.style.display == 'none') {
+    if (menuCover.style.display === 'none') {
+        contentHidden.style.display = 'none'; 
         menuCover.style.display = 'block';
-        showHideDetails();  
-    } else menuCover.style.display = 'none';
+    } else {
+        console.log('pook4')
+        menuCover.style.display = 'none';
+    }
 }
