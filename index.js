@@ -1,0 +1,1 @@
+const details = document.querySelector('details');

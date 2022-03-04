@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Serif:wght@400;700&family=Roboto&family=Yeseva+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.outer {
+    max-width: 320px;
+    min-width: 320px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #0D0C11;
+    overflow: hidden;
+}
+
+.main_header {
+    padding: 17px 15px 13px;
+    background-color: #181818;
+}
+
+.sandwich {
+    cursor: pointer;
+}
+
+.main {
+    font-family: 'PT Serif', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.content_brain-block {
+    background-image: url('./images/brain-block-backgr.svg');
+}
+
+.btn-test {
+    width: 189px;
+    height: 41px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(50% 50% at 50% 50%, #FFC700 0%, #FFC700 100%);
+    border-radius: 20px;
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.brain-block__text_top {
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-top: 27px;
+}
+
+.brain-block__text_big-yellow {
+    margin-top: 17px;
+    margin-bottom: 155px;
+    text-align: center;
+    font-family: 'Yeseva One', cursive;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 0.03em;
+    color: #FFC700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.brain-block__text_bottom {
+    margin: 22px 0 11px;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    line-height: 127%;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.brain-block__text_bottom span {
+    color: #FFC700;
+    font-weight: bold;
+}
+
+.details_arrow {
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.details_text {
+    margin: 5px 0 11px;
+    font-size: 8px;
+    line-height: 11px;
+    letter-spacing: 5%;
+    color: #FFFFFF;
+}
+
+.content__blue-block_background {
+    background-image: url('./images/blue-block-backgr.svg');
+    background-position: top center;
+
+}
+
+.content_blue-block {
+    padding: 35px 29px 25px 33px;
+    background: radial-gradient(84.34% 50.29% at 48.75% 49.71%, #2950C2 0%, rgba(38, 91, 199, 0.96) 40.62%, rgba(39, 98, 187, 0) 85.42%);
+}
+
+.blue-block_text {
+    font-family: 'Yeseva One';
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.07em;
+    color: #FFFFFF;
+}
+
+.qoutes-open {
+    margin-bottom: 17px;
+    align-self: start;
+}
+
+.quotes-close {
+    transform: rotate(-180deg);
+    align-self: flex-end
+}
+
+.content_brain-map-block {
+    background-color: white;
+    padding: 0 11px 40px;
+}
+
+.brain-map-block_text {
+    color: #272727;
+    margin: 38px auto;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+}
+
+.brain-map-block_text span {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.content_brain-map-block button {
+    width: 200px;
+    height: 44px;
+    margin-top: -9px;
+}
+
+.content_tunder-block {
+    background-image: url('./images/background-tunder-block.svg');
+    padding: 0 9px;
+    position: relative;
+}
+
+.tunder-block_text {
+    font-family: 'Merriweather', serif;
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 133%;
+    letter-spacing: 0.05em;
+    margin: 55px 5px 15px;
+}
+
+.tunder-block_text span {
+    font-weight: 900;
+    color: #FFC700;
+}
+
+.tunder-block__text_gray {
+    font-family: 'Merriweather', serif;
+    line-height: 144%;
+    letter-spacing: 0.05em;
+    background-color: #F3F3F2;
+    background: rgba(243, 243, 242, 0.8);
+    border-radius: 20px;
+    color: #181818;
+    padding: 30px 15px;
+    margin-bottom: 33px;
+}
+
+.content_tunder-block .btn-test {
+    background: transparent;
+    border: 1px solid white;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+}
+
+.lightning {
+    width: 165px;
+    height: 165px;
+    background: url('./images/ligtning.svg');
+    position: absolute;
+}
+
+.lightning-left {
+    left: 190px;
+    bottom: 300px;
+    transform: rotate(19.42deg);
+}
+
+.lightning-right {
+    left: -100px;
+    bottom: 30px;
+    transform: rotate(-33deg);
+}
+
+.footer {
+    font-family: Roboto;
+    font-size: 10px;
+    line-height: 230%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
