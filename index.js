@@ -25,7 +25,6 @@ function showHideMenu() {
         contentHidden.style.display = 'none'; 
         menuCover.style.display = 'block';
     } else {
-        console.log('pook4')
         menuCover.style.display = 'none';
     }
 }
