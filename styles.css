@@ -7,9 +7,8 @@
 }
 
 .outer {
-    max-width: 320px;
     min-width: 320px;
-    height: 100%;
+    max-width: 500px;
     margin: 0 auto;
     background-color: #0D0C11;
     overflow: hidden;
@@ -76,6 +75,8 @@
 .content__brain-block {
     background-image: url('./images/background-night-sky.svg');
     background-position: top center;
+    height: calc(100vh - 50px);
+    justify-content: space-between;
 }
 
 .btn-test {
@@ -127,6 +128,12 @@
 .brain-block__text_bottom span {
     color: #FFC700;
     font-weight: bold;
+}
+
+.brain-block__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .details_arrow {
