@@ -1,19 +1,27 @@
 const details = document.querySelector('.details_arrow');
 const btnTest = document.querySelector('.btn-test');
-const contentHidden = document.querySelector('.main-page__content');
-const menuBtn = document.querySelector('.sandwich');
+// const contentHidden = document.querySelector('.main-page__content');
 const menuCover = document.querySelector('.main-page__menu');
+const menuBtn = document.querySelector('.sandwich');
+const menuMainBtn = document.querySelector('.menu-list__item_main');
+const menuTestBtn = document.querySelector('.menu-list__item_test');
 const exitBtn = document.querySelector('.menu_exit-btn');
-const testBtn = document.querySelectorAll('.btn-test')
+const testBtn = document.querySelectorAll('.btn-test');
 
 // details.addEventListener('click', showHideDetails);
 menuBtn.addEventListener('click', showHideMenu);
 exitBtn.addEventListener('click', showHideMenu);
 testBtn.forEach(btn => (
     btn.addEventListener('click', function() {
-        window.location.href = './q1/q1.html'
+        window.location.href = './q1/q1.html';
     })
 ))
+menuMainBtn.addEventListener('click', function() {
+    window.location.href = './index.html';
+})
+menuTestBtn.addEventListener('click', function() {
+    window.location.href = './q1/q1.html';
+})
 
 
 // function showHideDetails() {

@@ -8,7 +8,7 @@
 
 .outer {
     min-width: 320px;
-    max-width: 500px;
+    max-width: 440px;
     margin: 0 auto;
     background-color: #0D0C11;
     overflow: hidden;
@@ -279,4 +279,48 @@
     color: #FFFFFF;
     opacity: 0.5;
     margin-bottom: 10px;
+}
+
+@media screen and (min-width: 440px) {
+    body {
+        background-color: #0D0C11;
+    }
+    .content__brain-block {
+        height: fit-content;
+    }
+    .btn-test {
+        height: 44px;
+        width: 200px;
+        font-size: 16px;
+    }
+    .brain-block__text_top {
+        font-size: 26px;
+    }
+    .brain-block__text_big-yellow {
+        font-size: 44px;
+    }
+    .big-brain {
+        width: 200px;
+    }
+    .brain-block__text_bottom {
+        font-size: 22px;
+    }
+    .details_text {
+        font-size: 13px;
+    }
+    .blue-block__text {
+        font-size: 22px;
+    }
+    .brain-map-block_text {
+        font-size: 22px;
+    }
+    .tunder-block__text {
+        font-size: 22px;
+    }
+    .tunder-block__text_gray {
+        font-size: 22px;
+    }
+    .footer {
+        font-size: 13px;
+    }
 }
