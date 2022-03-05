@@ -288,6 +288,12 @@
     .content__brain-block {
         height: fit-content;
     }
+    .content__brain-map-block {
+        padding: 0 40px 40px;
+    }
+    .content__tunder-block {
+        padding: 0 20px;
+    }
     .btn-test {
         height: 44px;
         width: 200px;
@@ -310,6 +316,7 @@
     }
     .blue-block__text {
         font-size: 22px;
+        padding: 0 40px;
     }
     .brain-map-block_text {
         font-size: 22px;
