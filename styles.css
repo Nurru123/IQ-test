@@ -6,9 +6,9 @@
     box-sizing: border-box;
 }
 
-.outer {
-    min-width: 320px;
-    max-width: 440px;
+.inner {
+    /* min-width: 320px;
+    max-width: 440px; */
     margin: 0 auto;
     background-color: #0D0C11;
     overflow: hidden;
