@@ -80,8 +80,8 @@
 }
 
 .btn-test {
-    width: 189px;
-    height: 41px;
+    width: 50vw;
+    min-height: 6vh;
     border: none;
     display: flex;
     align-items: center;
@@ -89,22 +89,23 @@
     background: radial-gradient(50% 50% at 50% 50%, #FFC700 0%, #FFC700 100%);
     border-radius: 20px;
     font-family: 'Merriweather', serif;
-    font-size: 14px;
+    font-size: 4vw;
     font-weight: 700;
     cursor: pointer;
+    color: black;
 }
 
 .brain-block__text_top {
-    font-size: 18px;
+    font-size: 6vw;
     color: #FFFFFF;
-    margin-top: 27px;
+    margin-top: 15px;
 }
 
 .brain-block__text_big-yellow {
     margin-top: 17px;
     text-align: center;
     font-family: 'Yeseva One', cursive;
-    font-size: 30px;
+    font-size: 10vw;
     line-height: 35px;
     letter-spacing: 0.03em;
     color: #FFC700;
@@ -113,12 +114,11 @@
 
 .big-brain {
     width: 47vw;
-    margin: 4px auto;
 }
 
 .brain-block__text_bottom {
     margin: 22px 0 11px;
-    font-size: 15px;
+    font-size: 5vw;
     letter-spacing: 0.05em;
     line-height: 127%;
     color: #FFFFFF;
@@ -147,7 +147,7 @@
 
 .details_text {
     margin: 5px 0 11px;
-    font-size: 8px;
+    font-size: 3vw;
     line-height: 11px;
     letter-spacing: 5%;
     color: #FFFFFF;
@@ -170,7 +170,7 @@
 
 .blue-block__text {
     font-family: 'Yeseva One';
-    font-size: 18px;
+    font-size: 5vw;
     line-height: 23px;
     text-align: center;
     letter-spacing: 0.07em;
@@ -189,7 +189,7 @@
 
 .content__brain-map-block {
     background-color: white;
-    padding: 0 11px 40px;
+    padding: 0 30px 40px 11px;
 }
 
 .brain-map-block_text {
@@ -197,6 +197,7 @@
     margin: 38px auto;
     line-height: 24px;
     letter-spacing: 0.05em;
+    font-size: 5vw;
 }
 
 .brain-map-block_text span {
@@ -219,7 +220,7 @@
 .tunder-block__text {
     font-family: 'Merriweather', serif;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 5vw;
     line-height: 133%;
     letter-spacing: 0.05em;
     margin: 55px 5px 15px;
@@ -232,6 +233,7 @@
 
 .tunder-block__text_gray {
     font-family: 'Merriweather', serif;
+    font-size: 5vw;
     line-height: 144%;
     letter-spacing: 0.05em;
     background-color: #F3F3F2;
@@ -270,7 +272,7 @@
 
 .footer {
     font-family: Roboto;
-    font-size: 10px;
+    font-size: 3vw;
     line-height: 230%;
     text-align: center;
     letter-spacing: 0.05em;
