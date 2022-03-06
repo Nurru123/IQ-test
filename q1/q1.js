@@ -9,7 +9,7 @@ function init() {
     iqTest.createTest();
     document.querySelectorAll('.radio').forEach(item => {
         item.addEventListener('change', () => console.log('lol'))
-    })
+    }) //не работает
 }
 
 
@@ -21,12 +21,11 @@ class IQTest {
     }
 
     createTest() {
-
         fetch(`${host}/data.json`)
             .then(res => res.json())
             .then(data => this.data = data.questions)
             .then(res => {
-                const question = new Question(this.data[0].question, this.data[0].answers)
+                const question = new Question(this.data[0])
                 this.testList.push(question)
                 this.container.append(question.div)
             })
@@ -35,12 +34,12 @@ class IQTest {
 }
 
 class Question {
-    constructor(question, answers) {
+    constructor(test) {
 
         this.div = document.createElement('div');
         this.div.classList.add('test');
-        this.div.innerHTML = `<p class='q'>${question}</p>`
-        this.answers = answers.forEach(a => {
+        this.div.innerHTML = `<p class='q'>${test.question}</p>`
+        this.answers = test.answers.forEach(a => {
             const label = document.createElement('label');
             const radio = document.createElement('input');
             radio.classList.add('radio')
@@ -55,7 +54,7 @@ class Question {
         })
         document.querySelectorAll('.radio').forEach(item => {
             item.addEventListener('change', () => console.log('lel'))
-        })
+        }) //не работает
         
     }
 
