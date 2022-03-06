@@ -1,12 +1,18 @@
 window.addEventListener('load', () => init());
 const host = 'http://127.0.0.1:5500/';
 const btnNext = document.querySelector('.btn-next');
-
+let counter = 0
 
 function init() {
     
     const iqTest = new IQTest()
     iqTest.createTest();
+
+    btnNext.addEventListener('click', () => {
+        ++counter
+        iqTest.destructor()
+        iqTest.createTest()
+    })
 }
 
 
@@ -22,7 +28,7 @@ class IQTest {
             .then(res => res.json())
             .then(data => this.data = data.questions)
             .then(res => {
-                const question = new Question(this.data[0])
+                const question = new Question(this.data[counter])
                 this.testList.push(question)
                 this.container.append(question.div)
             })
@@ -35,6 +41,12 @@ class IQTest {
                     })
                 })
             })
+    }
+
+    destructor() {
+        const test = document.querySelector('.test');
+        test.remove();
+        btnNext.disabled = true
     }
    
 }
