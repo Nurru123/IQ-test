@@ -12,14 +12,14 @@ const testBtn = document.querySelectorAll('.btn-test');
 menuBtn.addEventListener('click', showHideMenu);
 exitBtn.addEventListener('click', showHideMenu);
 testBtn.forEach(btn => (
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         window.location.href = './q1/q1.html';
     })
 ))
-menuMainBtn.addEventListener('click', function() {
+menuMainBtn.addEventListener('click', function () {
     window.location.href = '../index.html';
 })
-menuTestBtn.addEventListener('click', function() {
+menuTestBtn.addEventListener('click', function () {
     window.location.href = '../q1/q1.html';
 })
 
