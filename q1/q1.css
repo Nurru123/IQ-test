@@ -179,6 +179,16 @@
     margin: 13px;
 }
 
+.cubes-all input {
+    display: none;
+}
+
+:checked + label .cube {
+    border-color: #ddd;
+    border: 6px solid #FFC700;
+    box-sizing: border-box;
+}
+
 .cubes-all {
     display: flex;
     flex-wrap: wrap;

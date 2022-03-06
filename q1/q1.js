@@ -21,7 +21,6 @@ function init() {
 class IQTest {
     constructor() {
         this.container = document.querySelector('.q-page__content');
-        this.testList = [];
         this.data = [];
     }
 
@@ -31,11 +30,11 @@ class IQTest {
             .then(data => this.data = data.questions)
             .then(res => {
                 const question = new Question(this.data[counter]);
-                this.testList.push(question);
                 this.container.append(question.div);
             })
             .then(result => {
                 document.querySelectorAll('.radio').forEach(item => {
+                    console.log(item)
                     item.addEventListener('change', () => {
                         if (item.checked) {
                             btnNext.disabled = false;
@@ -64,7 +63,7 @@ class Question {
             this.pic.src = question.pic;
         }
         if (question.answers) {
-            this.answers = question.answers.forEach(a => {
+            this.answers = question.answers.forEach((a, i) => {
                 const label = document.createElement('label');
                 const radio = document.createElement('input');
                 radio.classList.add('radio');
@@ -73,23 +72,40 @@ class Question {
                 radio.type = 'radio';
                 radio.name = 'radio';
                 radio.value = a;
+                radio.id = `radio${i + 1}`;
+                label.setAttribute('for', `radio${i + 1}`);
                 label.innerHTML = a;
                 answ.append(radio);
                 answ.append(label);
                 this.div.append(answ);
             })
+
         } else if (question.blocks) {
             console.log('lol');
+            
         } else if (question.colors) {
             const cubesAll = document.createElement('div')
             cubesAll.classList.add('cubes-all')
             this.div.append(cubesAll)
-            this.cubes = question.colors.forEach(color => {
+            this.cubes = question.colors.forEach((color, i) => {
+                const cubeItem = document.createElement('div')
+                // cube.classList.add('cube')
+                cubesAll.append(cubeItem)
+                const label = document.createElement('label');
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.classList.add('radio');
+                radio.name = 'radio';
+                radio.id = `radio${i + 1}`;
+                label.setAttribute('for', `radio${i + 1}`);
                 const cube = document.createElement('div')
-                cube.classList.add('cube')
-                cube.style.backgroundColor = color
-                cubesAll.append(cube)
+                cube.classList.add('cube') 
+                cube.style.backgroundColor = color;
+                label.append(cube)
+                cubeItem.append(radio);
+                cubeItem.append(label)
             })
+            
         }
 
 
