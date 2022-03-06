@@ -1,7 +1,7 @@
 const details = document.querySelector('.details_arrow');
 const btnTest = document.querySelector('.btn-test');
 // const contentHidden = document.querySelector('.main-page__content');
-const menuCover = document.querySelector('.main-page__menu');
+const menuCover = document.querySelector('.menu');
 const menuBtn = document.querySelector('.sandwich');
 const menuMainBtn = document.querySelector('.menu-list__item_main');
 const menuTestBtn = document.querySelector('.menu-list__item_test');
@@ -17,12 +17,11 @@ testBtn.forEach(btn => (
     })
 ))
 menuMainBtn.addEventListener('click', function() {
-    window.location.href = './index.html';
+    window.location.href = '../index.html';
 })
 menuTestBtn.addEventListener('click', function() {
-    window.location.href = './q1/q1.html';
+    window.location.href = '../q1/q1.html';
 })
-
 
 // function showHideDetails() {
 //     contentHidden.classList.toggle('hidden')
@@ -34,7 +33,6 @@ menuTestBtn.addEventListener('click', function() {
 function showHideMenu() {
     menuCover.classList.toggle('show-menu');
     // if (!contentHidden.classList.contains('hidden')) {
-    //     console.log('pook')
     //     contentHidden.classList.add('hidden')
     //     details.classList.remove('arrow-up')
     // }

@@ -15,7 +15,7 @@
     position: relative;
 }
 
-.main-page__menu {
+.menu {
     display: none;
     position: absolute;
     width: 100%;
@@ -166,6 +166,12 @@
 .content__blue-block {
     padding: 35px 29px 25px 33px;
     background: radial-gradient(84.34% 50.29% at 48.75% 49.71%, #2950C2 0%, rgba(38, 91, 199, 0.96) 40.62%, rgba(39, 98, 187, 0) 85.42%);
+}
+
+.blue-block {
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
 }
 
 .blue-block__text {
@@ -320,6 +326,10 @@
     }
     .brain-map-block_text {
         font-size: 22px;
+        max-width: 440px;
+    }
+    .tunder-block {
+        max-width: 440px;
     }
     .tunder-block__text {
         font-size: 22px;

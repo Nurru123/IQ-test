@@ -10,18 +10,18 @@
 </head>
 
 <body>
-    <div class="outer">
+    <div class="menu">
+        <div class='menu_exit-btn'>
+            <img src="../images/main-x.svg" alt="exit">
+        </div>
+        <div class="menu-list">
+            <p class="menu-list__item menu-list__item_main">ГЛАВНАЯ</p>
+            <p class="menu-list__item">ИНФОРМАЦИЯ О ТЕСТЕ</p>
+            <p class="menu-list__item menu-list__item_test">ПРОЙТИ ТЕСТ</p>
+        </div>
+    </div>    
+    <div class="inner">
         <div class="q-page">
-            <div class="q-page__menu">
-                <div class='menu_exit-btn'>
-                    <img src="../images/main-x.svg" alt="exit">
-                </div>
-                <div class="menu-list">
-                    <p class="menu-list__item">ГЛАВНАЯ</p>
-                    <p class="menu-list__item">ИНФОРМАЦИЯ О ТЕСТЕ</p>
-                    <p class="menu-list__item">ПРОЙТИ ТЕСТ</p>
-                </div>
-            </div>
             <header class="q-page__header">
                 <img class="sandwich" src="../images/sandwich.svg" alt="menu">
                 <img class='small-brain' src="../images/big-brain.svg" alt="brain">
@@ -29,8 +29,12 @@
                     ТЕСТ НА ОПРЕДЕЛЕНИЕ IQ
                 </p>
             </header>
-            <div class="main main-page__content_all">
+            <div class="q-page__content-all">
+                <div class="gray-bar">
+                    <div class="gray-bar_fill"></div>
+                </div>
                 Hello!
+                <button class="btn-next" disabled>ДАЛЕЕ</button>
             </div>
         </div>
     </div>
