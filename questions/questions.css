@@ -8,7 +8,7 @@
 
 .inner {
     min-width: 320px;
-    max-width: 500px;
+    max-width: 440px;
     margin: 0 auto;
     background-color: #0D0C11;
     overflow: hidden;
@@ -124,7 +124,7 @@
     justify-content: center;
     border-radius: 20px;
     font-family: 'Merriweather', serif;
-    font-size: 4vw;
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     color: black;
@@ -176,6 +176,10 @@
     letter-spacing: 0.05em;
     margin-bottom: 8px;
     background: rgba(242, 243, 243, 0.15);
+}
+
+:checked + .answer  {
+    background: #FFC700;
 }
 
 .test img {
