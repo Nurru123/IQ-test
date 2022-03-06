@@ -91,7 +91,6 @@
 }
 
 .gray-bar_fill {
-    width: 10%;
     height: 100%;
     background: #3BDE7C;
     border-radius: 10.5px;
@@ -147,7 +146,7 @@
     line-height: 26px;
     letter-spacing: 0.05em;
     color: #FFFFFF;
-    margin: 15px 0;
+    padding: 15px;
     text-align: center;
 }
 
@@ -168,4 +167,20 @@
     letter-spacing: 0.05em;
     margin-bottom: 8px;
     background: rgba(242, 243, 243, 0.15);
+}
+
+.test img {
+    margin: 15px auto;
+}
+
+.cube {
+    width: 75px;
+    height: 75px;
+    margin: 13px;
+}
+
+.cubes-all {
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
 }
