@@ -66,9 +66,12 @@ class Question {
             this.pic.src = question.pic;
         }
         if (question.answers) {
+            const answers = document.createElement('div');
+            answers.classList.add('answers');
+            this.div.append(answers);
             this.answers = question.answers.forEach((a, i) => {
-                const answ = document.createElement('div');
-                answ.classList.add('answer');
+                const answer = document.createElement('div');
+                answer.classList.add('answer');
                 const label = document.createElement('label');
                 const radio = document.createElement('input');
                 radio.classList.add('radio');
@@ -78,9 +81,9 @@ class Question {
                 radio.id = `radio${i + 1}`;
                 label.setAttribute('for', `radio${i + 1}`);
                 label.innerHTML = a;
-                answ.append(radio);
-                answ.append(label);
-                this.div.append(answ);
+                answer.append(radio);
+                answer.append(label);
+                answers.append(answer);
             })
 
         } else if (question.blocks) {
