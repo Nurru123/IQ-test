@@ -52,6 +52,7 @@ class Question {
             const answ = document.createElement('div');
             answ.classList.add('answer')
             radio.type = 'radio'
+            radio.name = 'radio'
             radio.value = a;
             label.innerHTML = a;
             answ.append(radio)
