@@ -2,7 +2,7 @@ window.addEventListener('load', () => init());
 const host = 'http://127.0.0.1:5500/';
 const btnNext = document.querySelector('.btn-next');
 const bar = document.querySelector('.gray-bar_fill');
-let counter = 4;
+let counter = 0;
 
 function init() {
 
@@ -10,10 +10,12 @@ function init() {
     iqTest.createTest();
 
     btnNext.addEventListener('click', () => {
+        if (counter < 10) {   
         ++counter;
-        iqTest.destructor();
+        iqTest.deleteTest();
         iqTest.createTest();
         bar.style.width = `calc(100% / 11 * ${counter + 1})`;
+        }
     })
 }
 
@@ -44,7 +46,7 @@ class IQTest {
             })
     }
 
-    destructor() {
+    deleteTest() {
         const test = document.querySelector('.test');
         test.remove();
         btnNext.disabled = true;
@@ -57,6 +59,7 @@ class Question {
         this.div = document.createElement('div');
         this.div.classList.add('test');
         this.div.innerHTML = `<p class='q'>${question.question}</p>`;
+
         if (question.pic) {
             this.pic = document.createElement('img');
             this.div.append(this.pic);
@@ -64,11 +67,11 @@ class Question {
         }
         if (question.answers) {
             this.answers = question.answers.forEach((a, i) => {
+                const answ = document.createElement('div');
+                answ.classList.add('answer');
                 const label = document.createElement('label');
                 const radio = document.createElement('input');
                 radio.classList.add('radio');
-                const answ = document.createElement('div');
-                answ.classList.add('answer');
                 radio.type = 'radio';
                 radio.name = 'radio';
                 radio.value = a;
@@ -81,16 +84,12 @@ class Question {
             })
 
         } else if (question.blocks) {
-            console.log('lol');
-            
-        } else if (question.colors) {
-            const cubesAll = document.createElement('div')
-            cubesAll.classList.add('cubes-all')
-            this.div.append(cubesAll)
-            this.cubes = question.colors.forEach((color, i) => {
-                const cubeItem = document.createElement('div')
-                // cube.classList.add('cube')
-                cubesAll.append(cubeItem)
+            const blocksAll = document.createElement('div')
+            blocksAll.classList.add('blocks-all')
+            this.div.append(blocksAll)
+            this.blocks = question.blocks.forEach((item, i) => {
+                const blockItem = document.createElement('div')
+                blocksAll.append(blockItem)
                 const label = document.createElement('label');
                 const radio = document.createElement('input');
                 radio.type = 'radio';
@@ -98,20 +97,37 @@ class Question {
                 radio.name = 'radio';
                 radio.id = `radio${i + 1}`;
                 label.setAttribute('for', `radio${i + 1}`);
-                const cube = document.createElement('div')
-                cube.classList.add('cube') 
+                const block = document.createElement('div');
+                block.classList.add('block'); 
+                block.innerHTML = item;
+                label.append(block);
+                blockItem.append(radio);
+                blockItem.append(label);
+            })
+            
+        } else if (question.colors) {
+            const cubesAll = document.createElement('div');
+            cubesAll.classList.add('cubes-all');
+            this.div.append(cubesAll);
+            this.cubes = question.colors.forEach((color, i) => {
+                const cubeItem = document.createElement('div');
+                // cube.classList.add('cube')
+                cubesAll.append(cubeItem);
+                const label = document.createElement('label');
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.classList.add('radio');
+                radio.name = 'radio';
+                radio.id = `radio${i + 1}`;
+                label.setAttribute('for', `radio${i + 1}`);
+                const cube = document.createElement('div');
+                cube.classList.add('cube');
                 cube.style.backgroundColor = color;
-                label.append(cube)
+                label.append(cube);
                 cubeItem.append(radio);
-                cubeItem.append(label)
+                cubeItem.append(label);
             })
             
         }
-
-
-
-
-
     }
-
 }

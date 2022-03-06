@@ -179,12 +179,11 @@
     margin: 13px;
 }
 
-.cubes-all input {
+.cubes-all input, .blocks-all input {
     display: none;
 }
 
-:checked + label .cube {
-    border-color: #ddd;
+:checked + label .cube, :checked + label .block {
     border: 6px solid #FFC700;
     box-sizing: border-box;
 }
@@ -193,4 +192,22 @@
     display: flex;
     flex-wrap: wrap;
    justify-content: center;
+}
+
+.blocks-all {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.block {
+    width: 41px;
+    height: 44px;
+    font-family: PT Serif;
+    font-size: 20px;
+    background-color: #FFFFFF;
+    margin: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
