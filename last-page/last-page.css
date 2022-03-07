@@ -170,6 +170,7 @@ footer {
     .q-page__content {
         height: auto;
         min-height: calc(100vh - 50px);
+        padding: 10px 0 45px;
     }
 
     .content_title {
