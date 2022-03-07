@@ -11,7 +11,6 @@
     max-width: 440px;
     margin: 0 auto;
     background-color: #0D0C11;
-    overflow: hidden;
     position: relative;
 }
 
@@ -248,6 +247,7 @@
     color: #181818;
     padding: 30px 15px;
     margin-bottom: 33px;
+    z-index: 100;
 }
 
 .content__tunder-block .btn-test {
@@ -260,17 +260,16 @@
 .lightning {
     width: 165px;
     height: 165px;
-    background: url('./images/ligtning.svg');
     position: absolute;
 }
 
-.lightning-left {
-    left: 190px;
+.lightning-right {
+    /* right: -190px; */
     bottom: 300px;
     transform: rotate(20deg);
 }
 
-.lightning-right {
+.lightning-left {
     left: -100px;
     bottom: 30px;
     transform: rotate(-33deg);

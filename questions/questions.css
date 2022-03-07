@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Serif:wght@400;700&family=Roboto:wght@300;400&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Serif:wght@400;700&family=Roboto:wght@300;400;500;900&family=Yeseva+One&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #0D0C11;
 }
 
 .inner {
@@ -103,7 +107,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .q-page__content {
@@ -141,11 +145,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
 }
 
 .q {
-    font-family: PT Serif;
+    font-family: 'PT Serif', serif;
     font-size: 20px;
     line-height: 26px;
     letter-spacing: 0.05em;
@@ -159,6 +162,7 @@
     background-color: transparent;
     width: 20px;
     height: 20px;
+    cursor: pointer;
 }
 
 .answers {
@@ -171,7 +175,7 @@
     display: flex;
     align-items: center;
     color: #FFFFFF;
-    font-family: PT Serif;
+    font-family: 'PT Serif', serif;
     font-size: 18px;
     letter-spacing: 0.05em;
     margin-bottom: 8px;
@@ -182,10 +186,15 @@
     margin: 0 auto 20px;
 }
 
-.cube {
+.cube-item {
     width: 75px;
     height: 75px;
-    margin: 13px;
+    margin: 10px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
 }
 
 .cubes-all input, .blocks-all input {
@@ -200,7 +209,7 @@
 .cubes-all {
     display: flex;
     flex-wrap: wrap;
-   justify-content: center;
+    justify-content: center;
 }
 
 .blocks-all {
@@ -212,17 +221,41 @@
 .block {
     width: 41px;
     height: 44px;
-    font-family: PT Serif;
+    font-family: 'PT Serif', serif;
     font-size: 20px;
     background-color: #FFFFFF;
-    margin: 0 4px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-@media screen and (min-width: 440px) {
-    body {
-        background-color: #0D0C11;
-    }
+.checked {
+    background: #FFC700;
+    color: black;
+}
+
+.loading .q {
+    font-family: 'PT Serif', serif;
+    font-size: 23px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    padding: 15px;
+    text-align: center;
+    margin: 50px auto 33px;
+}
+
+.loading img {
+    width: 65px;
+    height: 68.32px;
+    align-self: center;
+}
+
+.loading-text {
+    font-family: 'PT Serif', serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 28px 22px 0;
+    align-self: flex-start;
+    word-break: break-all;
 }

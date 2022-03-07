@@ -1,5 +1,6 @@
 window.addEventListener('load', () => init());
 const host = 'http://127.0.0.1:5500/';
+const container = document.querySelector('.q-page__content');
 const btnNext = document.querySelector('.btn-next');
 const bar = document.querySelector('.gray-bar_fill');
 let counter = 0;
@@ -10,19 +11,28 @@ function init() {
     iqTest.createTest();
 
     btnNext.addEventListener('click', () => {
-        if (counter < 10) {   
         ++counter;
+        if (counter <= 10) {   
         iqTest.deleteTest();
         iqTest.createTest();
         bar.style.width = `calc(100% / 11 * ${counter + 1})`;
+        } else {
+            iqTest.deleteTest();
+            iqTest.createTest();
+            btnNext.style.display = 'none';
+            setTimeout(function() {
+                window.location.href = '../last-page/last-page.html';
+              }, 5000);
         }
     })
 }
 
 
+
+
 class IQTest {
     constructor() {
-        this.container = document.querySelector('.q-page__content');
+        this.container = container;
         this.data = [];
     }
 
@@ -34,12 +44,14 @@ class IQTest {
                 const question = new Question(this.data[counter]);
                 this.container.append(question.div);
             })
-            .then(result => {
+            .then(res => {
                 document.querySelectorAll('.radio').forEach(item => {
-                    console.log(item)
                     item.addEventListener('change', () => {
                         if (item.checked) {
+                            item.parentElement.classList.add('checked')
                             btnNext.disabled = false;
+                        } else if (item.checked === false) {
+                            item.parentElement.classList.remove('checked') //не работает как надо :(
                         }
                     })
                 })
@@ -90,7 +102,7 @@ class Question {
             const blocksAll = document.createElement('div')
             blocksAll.classList.add('blocks-all')
             this.div.append(blocksAll)
-            this.blocks = question.blocks.forEach((item, i) => {
+            this.blocks = question.blocks.forEach((b, i) => {
                 const blockItem = document.createElement('div')
                 blocksAll.append(blockItem)
                 const label = document.createElement('label');
@@ -102,7 +114,7 @@ class Question {
                 label.setAttribute('for', `radio${i + 1}`);
                 const block = document.createElement('div');
                 block.classList.add('block'); 
-                block.innerHTML = item;
+                block.innerHTML = b;
                 label.append(block);
                 blockItem.append(radio);
                 blockItem.append(label);
@@ -114,7 +126,7 @@ class Question {
             this.div.append(cubesAll);
             this.cubes = question.colors.forEach((color, i) => {
                 const cubeItem = document.createElement('div');
-                // cube.classList.add('cube')
+                cubeItem.classList.add('cube-item')
                 cubesAll.append(cubeItem);
                 const label = document.createElement('label');
                 const radio = document.createElement('input');
@@ -131,6 +143,19 @@ class Question {
                 cubeItem.append(label);
             })
             
+        } else if (question.loading) {
+            // const loadingTitle = document.querySelector('.q');
+            // loadingTitle.classList.add('loading-title');
+            // const loading = document.querySelector('img');
+            // loading.classList.add('loading-img');
+            const loadingText = document.createElement('p');
+            loadingText.classList.add('loading-text');
+            loadingText.innerHTML = `${question.loading}`;
+            this.div.append(loadingText);
+            let timer = setInterval(function() {
+                loadingText.innerHTML = `${loadingText.innerHTML}` + `. `;
+              }, 100);
+            setTimeout(() => { clearInterval(timer); }, 5000);
         }
     }
 }
