@@ -6,12 +6,17 @@
     box-sizing: border-box;
 }
 
+.body {
+    background-color: #0D0C11;
+}
+
 .inner {
     min-width: 320px;
-    max-width: 440px;
+    /* max-width: 440px; */
     margin: 0 auto;
     background-color: #0D0C11;
     position: relative;
+    overflow: hidden;
 }
 
 .menu {
@@ -159,10 +164,12 @@
 .content__blue-block_background {
     background-image: url('./images/blue-block-backgr.svg');
     background-position: top center;
+    background-size: cover;
 
 }
 
 .content__blue-block {
+    
     padding: 35px 29px 25px 33px;
     background: radial-gradient(84.34% 50.29% at 48.75% 49.71%, #2950C2 0%, rgba(38, 91, 199, 0.96) 40.62%, rgba(39, 98, 187, 0) 85.42%);
 }
@@ -264,7 +271,7 @@
 }
 
 .lightning-right {
-    /* right: -190px; */
+    right: -30px;
     bottom: 300px;
     transform: rotate(20deg);
 }
@@ -287,9 +294,7 @@
 }
 
 @media screen and (min-width: 440px) {
-    body {
-        background-color: #0D0C11;
-    }
+
     .content__brain-block {
         height: fit-content;
     }
@@ -335,6 +340,10 @@
     }
     .tunder-block__text_gray {
         font-size: 22px;
+    }
+    .lightning {
+        width: 200px;
+        height: 200px;
     }
     .footer {
         font-size: 13px;

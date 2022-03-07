@@ -47,11 +47,12 @@ class IQTest {
             .then(res => {
                 document.querySelectorAll('.radio').forEach(item => {
                     item.addEventListener('change', () => {
+                        document.querySelectorAll('.radio').forEach(item => {
+                            item.parentElement.classList.remove('checked')
+                        })
                         if (item.checked) {
                             item.parentElement.classList.add('checked')
                             btnNext.disabled = false;
-                        } else if (item.checked === false) {
-                            item.parentElement.classList.remove('checked') //не работает как надо :(
                         }
                     })
                 })
