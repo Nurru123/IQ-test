@@ -15,7 +15,8 @@ body {
     /* max-width: 440px; */
     margin: 0 auto;
     background-color: #0D0C11;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     position: relative;
 }
 
@@ -107,6 +108,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     /* justify-content: space-between; */
 }
 
@@ -133,7 +135,7 @@ body {
     font-weight: 700;
     cursor: pointer;
     color: black;
-    margin-bottom: 25px;
+    margin: 25px auto;
 }
 
 .btn-next:disabled {
@@ -264,12 +266,17 @@ body {
 
 
 @media screen and (min-width: 440px) {
-    /* .q-page__content-all {
-        height: fit-content;
-    } */
+    .q-page__content-all {
+        height: auto;
+        min-height: calc(100vh - 50px);
+    }
 
     .header__text_yellow {
         font-size: 20px;
+    }
+    
+    .gray-bar {
+        margin-bottom: 50px;
     }
 
     .q {

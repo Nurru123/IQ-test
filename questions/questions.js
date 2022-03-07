@@ -12,6 +12,7 @@ function init() {
 
     btnNext.addEventListener('click', () => {
         ++counter;
+        
         if (counter <= 10) {   
         iqTest.deleteTest();
         iqTest.createTest();
