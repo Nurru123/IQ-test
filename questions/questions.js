@@ -1,6 +1,5 @@
 window.addEventListener('load', () => init());
-// const host = 'http://127.0.0.1:5500/';
-const host = 'https://nurru123.github.io/IQ-test';
+const host = 'http://127.0.0.1:5500/';
 const container = document.querySelector('.q-page__content');
 const btnNext = document.querySelector('.btn-next');
 const bar = document.querySelector('.gray-bar_fill');
@@ -23,7 +22,7 @@ function init() {
             iqTest.createTest();
             btnNext.style.display = 'none';
             setTimeout(function() {
-                window.location.href = `${host}/last-page/last-page.html`;
+                window.location.href = `/last-page/last-page.html`;
               }, 5000);
         }
     })
