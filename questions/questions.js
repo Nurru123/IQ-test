@@ -12,7 +12,7 @@ function init() {
 
     btnNext.addEventListener('click', () => {
         ++counter;
-        
+
         if (counter <= 10) {   
         iqTest.deleteTest();
         iqTest.createTest();
@@ -22,7 +22,7 @@ function init() {
             iqTest.createTest();
             btnNext.style.display = 'none';
             setTimeout(function() {
-                window.location.href = '../last-page/last-page.html';
+                window.location.pathname = '../last-page/last-page.html';
               }, 5000);
         }
     })
