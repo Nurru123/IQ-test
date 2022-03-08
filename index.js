@@ -13,14 +13,14 @@ menuBtn.addEventListener('click', showHideMenu);
 exitBtn.addEventListener('click', showHideMenu);
 testBtn.forEach(btn => (
     btn.addEventListener('click', function () {
-        window.location.pathname = './questions/questions.html';
+        window.location.href = '/questions/questions.html';
     })
 ))
 menuMainBtn.addEventListener('click', function () {
-    window.location.pathname = '../index.html';
+    window.location.href = '/index.html';
 })
 menuTestBtn.addEventListener('click', function () {
-    window.location.pathname = '../questions/questions.html';
+    window.location.href = '/questions/questions.html';
 })
 
 // function showHideDetails() {
