@@ -1,6 +1,6 @@
 window.addEventListener('load', () => init());
 // const host = 'http://127.0.0.1:5500/';
-const host = 'https://nurru123.github.io/IQ-test/';
+const host = 'https://nurru123.github.io/IQ-test';
 const container = document.querySelector('.q-page__content');
 const btnNext = document.querySelector('.btn-next');
 const bar = document.querySelector('.gray-bar_fill');

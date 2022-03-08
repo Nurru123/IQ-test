@@ -7,7 +7,7 @@ const menuMainBtn = document.querySelector('.menu-list__item_main');
 const menuTestBtn = document.querySelector('.menu-list__item_test');
 const exitBtn = document.querySelector('.menu_exit-btn');
 const testBtn = document.querySelectorAll('.btn-test');
-const host = 'https://nurru123.github.io/IQ-test/';
+const host = 'https://nurru123.github.io/IQ-test';
 
 // details.addEventListener('click', showHideDetails);
 menuBtn.addEventListener('click', showHideMenu);
