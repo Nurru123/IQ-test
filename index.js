@@ -7,20 +7,21 @@ const menuMainBtn = document.querySelector('.menu-list__item_main');
 const menuTestBtn = document.querySelector('.menu-list__item_test');
 const exitBtn = document.querySelector('.menu_exit-btn');
 const testBtn = document.querySelectorAll('.btn-test');
+const host = 'https://nurru123.github.io/IQ-test/';
 
 // details.addEventListener('click', showHideDetails);
 menuBtn.addEventListener('click', showHideMenu);
 exitBtn.addEventListener('click', showHideMenu);
 testBtn.forEach(btn => (
     btn.addEventListener('click', function () {
-        window.location.href = '/questions/questions.html';
+        window.location.href = `${host}/questions/questions.html`;
     })
 ))
 menuMainBtn.addEventListener('click', function () {
-    window.location.href = '/index.html';
+    window.location.href = `${host}/index.html`;
 })
 menuTestBtn.addEventListener('click', function () {
-    window.location.href = '/questions/questions.html';
+    window.location.href = `${host}/questions/questions.html`;
 })
 
 // function showHideDetails() {
