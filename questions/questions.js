@@ -65,7 +65,7 @@ class IQTest {
     }
 
     loadData() {
-        return fetch(`../data.json`)
+        return fetch(`/data.json`)
             .then(res => res.json())
             .then(data => {
                 this.data = data.questions
