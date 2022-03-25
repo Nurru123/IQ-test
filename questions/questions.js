@@ -22,7 +22,7 @@ function init() {
             iqTest.createQuestion();
             btnNext.style.display = 'none';
             setTimeout(function() {
-                window.location.href = `../last-page/last-page.html`;
+                window.location.href = `/last-page/last-page.html`;
               }, 5000);
         }
     })
