@@ -25,7 +25,6 @@ async function drawLuke() {
     let luke = await res.json();
 
     document.querySelector('.content_call-me').addEventListener('click', () => {
-
         container.classList.add('show_luke')
         const searchBio = document.querySelector('.bio');
 
@@ -66,7 +65,6 @@ function init() {
     
     function hideLuke() {
         container.classList.remove('show_luke');
-        console.log('pook')
     }
 };
 

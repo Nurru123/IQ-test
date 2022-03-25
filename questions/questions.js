@@ -1,5 +1,5 @@
 window.addEventListener('load', () => init());
-const host = 'http://127.0.0.1:5500/';
+const path = '../IQ-test';
 const container = document.querySelector('.q-page__content');
 const btnNext = document.querySelector('.btn-next');
 const bar = document.querySelector('.gray-bar_fill');
@@ -8,18 +8,18 @@ let counter = 0;
 function init() {
 
     const iqTest = new IQTest()
-    iqTest.createTest();
+    iqTest.createQuestion();
 
     btnNext.addEventListener('click', () => {
         ++counter;
 
-        if (counter <= 10) {   
+        if (counter <= 10) {
         iqTest.deleteTest();
-        iqTest.createTest();
+        iqTest.createQuestion();
         bar.style.width = `calc(100% / 11 * ${counter + 1})`;
         } else {
             iqTest.deleteTest();
-            iqTest.createTest();
+            iqTest.createQuestion();
             btnNext.style.display = 'none';
             setTimeout(function() {
                 window.location.href = `/last-page/last-page.html`;
@@ -34,29 +34,41 @@ function init() {
 class IQTest {
     constructor() {
         this.container = container;
-        this.data = [];
+        this.data = null;
     }
 
-    createTest() {
-        fetch(`${host}/data.json`)
-            .then(res => res.json())
-            .then(data => this.data = data.questions)
-            .then(res => {
-                const question = new Question(this.data[counter]);
-                this.container.append(question.div);
-            })
-            .then(res => {
-                document.querySelectorAll('.radio').forEach(item => {
-                    item.addEventListener('change', () => {
-                        document.querySelectorAll('.radio').forEach(item => {
-                            item.parentElement.classList.remove('checked')
-                        })
-                        if (item.checked) {
-                            item.parentElement.classList.add('checked')
-                            btnNext.disabled = false;
-                        }
-                    })
+    createQuestion() {
+        if (!this.data) {
+            this.loadData()
+                .then(() => this.interactiveTest())
+        } else {
+            this.interactiveTest()
+        }
+    }
+
+    interactiveTest() {
+        const question = new Question(this.data[counter]);
+        this.container.append(question.div);
+
+        this.container.querySelectorAll('.radio').forEach(item => {
+            item.addEventListener('change', () => {
+                this.container.querySelectorAll('.checked').forEach(item => {
+                    item.classList.remove('checked')
                 })
+                if (item.checked) {
+                    item.parentElement.classList.add('checked')
+                    item.parentElement.parentElement.classList.add('checked')
+                    btnNext.disabled = false;
+                }
+            })
+        })
+    }
+
+    loadData() {
+        return fetch(`../data.json`)
+            .then(res => res.json())
+            .then(data => {
+                this.data = data.questions
             })
     }
 
@@ -87,6 +99,8 @@ class Question {
                 const answer = document.createElement('div');
                 answer.classList.add('answer');
                 const label = document.createElement('label');
+                const radioCont = document.createElement('div');
+                radioCont.classList.add('radio-cont');
                 const radio = document.createElement('input');
                 radio.classList.add('radio');
                 radio.type = 'radio';
@@ -95,7 +109,8 @@ class Question {
                 radio.id = `radio${i + 1}`;
                 label.setAttribute('for', `radio${i + 1}`);
                 label.innerHTML = a;
-                answer.append(radio);
+                answer.append(radioCont);
+                radioCont.append(radio);
                 answer.append(label);
                 answers.append(answer);
             })

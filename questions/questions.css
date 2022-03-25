@@ -160,12 +160,24 @@ body {
     text-align: center;
 }
 
-.radio {
+.radio-cont {
     margin: 0 40px 0 35px;
     background-color: transparent;
     width: 20px;
     height: 20px;
+    border-radius: 50%;
+    border: 1px solid #FFFFFF;
     cursor: pointer;
+}
+.radio-cont.checked {
+    background-color: #2950C2;
+    border-color: #000000;
+}
+.radio {
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
 }
 
 .answers {
@@ -184,6 +196,11 @@ body {
     margin-bottom: 8px;
     background: rgba(242, 243, 243, 0.15);
 }
+.answer.checked {
+    background: #FFC700;
+    color: black;
+}
+
 
 .test img {
     margin: 10px auto 20px;
@@ -231,11 +248,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.checked {
-    background: #FFC700;
-    color: black;
 }
 
 .loading .q {
