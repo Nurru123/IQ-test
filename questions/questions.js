@@ -22,7 +22,7 @@ function init() {
             iqTest.createQuestion();
             btnNext.style.display = 'none';
             setTimeout(function() {
-                window.location.href = `/last-page/last-page.html`;
+                window.location.href = `https://nurru123.github.io/IQ-test/last-page/last-page.html`;
               }, 5000);
         }
     })
@@ -65,7 +65,7 @@ class IQTest {
     }
 
     loadData() {
-        return fetch(`/data.json`)
+        return fetch(`/IQ-test/data.json`)
             .then(res => res.json())
             .then(data => {
                 this.data = data.questions
