@@ -22,7 +22,7 @@ function init() {
             iqTest.createQuestion();
             btnNext.style.display = 'none';
             setTimeout(function() {
-                window.location.href = `https://nurru123.github.io/IQ-test/last-page/last-page.html`;
+                window.location.href = `/IQ-test/last-page/last-page.html`;
               }, 5000);
         }
     })
